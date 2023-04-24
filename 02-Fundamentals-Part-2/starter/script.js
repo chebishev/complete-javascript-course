@@ -29,13 +29,13 @@ function calcTip(bill) {
 testData = [125, 555, 44];
 let bills = [];
 let tips = [];
-let total = []
+let totals = []
 
 for(let i = 0; i < testData.length; i++) {
     bills.push(testData[i]);
     tips.push(calcTip(testData[i]));
-    total.push(testData[i] + tips[i]);
+    totals.push(testData[i] + tips[i]);
 }
 console.log(bills);
 console.log(tips);
-console.log(total);
+console.log(totals);
