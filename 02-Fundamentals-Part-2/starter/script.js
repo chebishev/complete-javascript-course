@@ -24,14 +24,8 @@ checkWinner(calcAverage(85, 54, 41), calcAverage(23, 34, 27));
 // else = 20%
 
 function calcTip(bill) {
-    if (bill >= 50 && bill <= 300) {
-        return bill * 0.15;
-    }
-    else {
-        return bill * 0.2;
-    }
+    return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
 }
-
 testData = [125, 555, 44];
 let bills = [];
 let tips = [];
