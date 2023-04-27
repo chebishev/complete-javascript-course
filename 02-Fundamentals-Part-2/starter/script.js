@@ -1,16 +1,18 @@
+'use strict';
+
 // functions codding challenge
 
 function checkWinner(TeamAverage, TeamBAverage) {
     
     let [TeamA, TeamB] = ["Dolphins", "Koalas"]
     if (TeamAverage >= 2 * TeamBAverage) {
-        console.log(`${TeamA} win 🏆 (${TeamAverage} vs. ${TeamBAverage})`);
+        //console.log(`${TeamA} win 🏆 (${TeamAverage} vs. ${TeamBAverage})`);
     }
     else if (TeamAverage >= 2 * TeamBAverage) {
-        console.log(`${TeamB} win 🏆 (${TeamBAverage} vs. ${TeamAverage})`);
+        //console.log(`${TeamB} win 🏆 (${TeamBAverage} vs. ${TeamAverage})`);
     }
     else {
-        console.log('No team wins...');
+       //console.log('No team wins...');
     }
     
 }
@@ -36,6 +38,53 @@ for(let i = 0; i < testData.length; i++) {
     tips.push(calcTip(testData[i]));
     totals.push(testData[i] + tips[i]);
 }
-console.log(bills);
-console.log(tips);
-console.log(totals);
+// console.log(bills);
+// console.log(tips);
+// console.log(totals);
+
+// BMI Challenge:
+
+let mark = {
+    fullName: "Mark Miller",
+    mass: 78,
+    height: 1.69,
+    calcBMI: function() {
+        return this.mass / this.height ** 2;
+    }
+}
+
+let john = {
+    fullName: "John Smith",
+    mass: 92,
+    height: 1.95,
+    calcBMI: function() {
+        return this.mass / this.height ** 2;
+    }
+}
+
+if (mark.calcBMI() > john.calcBMI()) {
+    winner = mark
+    loser = john
+} else {
+    winner = john
+    loser = mark
+}
+//console.log(`${winner.fullName}'s BMI (${winner.calcBMI().toFixed(1)}) is higher than ${loser.fullName}'s (${loser.calcBMI().toFixed(1)})!`)
+
+// Loops codding challenge
+
+let newBills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52]
+let newTips = []
+let newTotals = []
+for (let i = 0; i < newBills.length; i++) {
+    newTips.push(calcTip(newBills[i]))
+    newTotals.push(newBills[i] + newTips[i])
+}
+function newCalcAverage(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    return sum / arr.length;
+}
+//console.log(newCalcAverage(newTotals));
